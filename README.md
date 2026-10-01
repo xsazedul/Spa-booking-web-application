@@ -105,9 +105,7 @@ A lightweight, modern, mobile-first Bengali Home Care & Personal Wellness Spa Se
 
 ## 📞 Support & Contact
 
-- **Telegram Support:** [@kemlu09](https://t.me/kemlu09)
-- **Live Demo:** [http://service.felles.xyz](http://service.felles.xyz)
-
+- 
 ---
 
 ## 📄 License
