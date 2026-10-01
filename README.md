@@ -1,80 +1,114 @@
-# 🌿 হোম সার্ভিস সেন্টার (Home Service Center) - মোবাইল-ফার্স্ট বাংলা ওয়েব অ্যাপ্লিকেশন
+# 🌿 Home Service Center & Spa Booking Web Application
 
-একটি আধুনিক, দ্রুত ও ১০০% বাংলায় তৈরি মোবাইল-ফার্স্ট হোম সার্ভিস বুকিং ওয়েবসাইট ও অ্যাডমিন প্যানেল। এটি বিশেষভাবে cPanel হোস্টিং ও সাধারণ পিএইচপি সার্ভারে ব্যবহারের জন্য প্রস্তুত করা হয়েছে।
-
----
-
-## ✨ প্রধান বৈশিষ্ঠ্যসমূহ (Key Features)
-
-- **১০০% বাংলা ভাষা ও আধুনিক ডিজাইন:** দৃষ্টিনন্দন বাংলা টাইপোগ্রাফি (Hind Siliguri ফন্ট), সফট হোয়াইট এবং লাইট টিল/সবুজ রঙের প্রফেশনাল থিম।
-- **নো রেজিস্ট্রেশন / নো লগইন:** গ্রাহকদের কোনো অ্যাকাউন্ট তৈরি বা পাসওয়ার্ড মনে রাখার ঝামেলা নেই।
-- **সহজ ৩-ধাপের বুকিং উইজার্ড (3-Step Booking Wizard):**
-  - **ধাপ ১:** গ্রাহকের নাম এবং সার্ভিস প্রোভাইডার নির্বাচন (পুরুষ / মহিলা)।
-  - **ধাপ ২:** মোবাইল নম্বর, বয়স, এবং **"আমার বর্তমান লোকেশন ব্যবহার করুন" GPS বাটন** (অনুমতি সাপেক্ষে সঠিক ঠিকানা সনাক্তকরণ ও ম্যানুয়াল ঠিকানা ইনপুট)।
-  - **ধাপ ৩:** প্রোভাইডার জেন্ডার অনুযায়ী প্রাসঙ্গিক সার্ভিসসমূহ, প্রোভাইডারের পছন্দসই বয়সসীমা, সার্ভিসের তারিখ ও সময় নির্বাচন।
-- **স্বয়ংক্রিয় রিকোয়েস্ট আইডি ও কনফার্মেশন:** বুকিং সম্পন্ন হলে ইউনিক ট্র্যাকিং আইডি (`HSC-YYYYMMDD-XXXXX`) সহ সুন্দর বাংলা রসিদ প্রদর্শন এবং এক ক্লিকে WhatsApp / ফোন কলের মাধ্যমে কনফার্মেশনের সুবিধা।
-- **শক্তিশালী ও সুরক্ষিত অ্যাডমিন প্যানেল:**
-  - মোবাইল ও ডেস্কটপ উভয়ের জন্য রেসপনসিভ ড্যাশবোর্ড।
-  - পুরুষ (Male) ও মহিলা (Female) প্রোভাইডার ফিল্টার ট্যাব।
-  - লাইভ সার্চ ও স্ট্যাটাস ফিল্টার (Pending / Confirmed / Completed / Cancelled)।
-  - কাস্টমার আইপি (IP Address) এবং ইউজার এজেন্ট ট্র্যাকিং।
-  - ব্যবহারকারীর অনুমতিপ্রাপ্ত GPS লোকেশনের সাথে সরাসরি **Google Maps** লিঙ্ক।
-  - Excel / CSV ফরম্যাটে সকল বুকিং ডাটা এক ক্লিকে এক্সপোর্ট।
-  - অ্যাডমিন পাসওয়ার্ড পরিবর্তনের সুবিধা।
+A lightweight, modern, mobile-first Bengali Home Care & Personal Wellness Spa Service Booking web application built with **PHP 8.x** and Vanilla JavaScript. Designed specifically for standard cPanel hosting and shared servers with **dual database support (MySQL & Zero-Config SQLite)**.
 
 ---
 
-## 🚀 cPanel এ ইনস্টলেশন ও সেটআপ নির্দেশিকা
+## ✨ Key Features
 
-এই প্রজেক্টটিতে **ডুয়েল ডাটাবেজ আর্কিটেকচার (MySQL & SQLite)** রয়েছে। আপনি চাইলে MySQL দিয়ে চালাতে পারেন, অথবা কোনো ডাটাবেজ তৈরি না করেই সরাসরি SQLite দিয়ে ইনস্ট্যান্ট চালাতে পারেন।
+### 📱 Customer Booking Interface (`index.php`)
+- **100% Bengali Typography:** Clean, modern Bengali font rendering (*Hind Siliguri* & *Plus Jakarta Sans*).
+- **Soft Light Theme:** Elegant soft white (`#ffffff`), light mint/teal (`#0d9488`, `#f0fdfa`), and subtle gray color palette.
+- **Frictionless Experience:** No registration or customer login required.
+- **3-Step Smart Booking Wizard:**
+  - **Step 1:** Customer Name & Provider Selection (*Young Male Therapist* / *Young Female Therapist* with high-definition realistic profile portraits).
+  - **Step 2:** Mobile Number, Age, and **📍 "Use My Location" (GPS)** button for automatic address reverse-geocoding via OpenStreetMap Nominatim + manual address input.
+  - **Step 3:** Dynamic service catalog tailored to provider selection, eye-catching Provider Preferred Age Range cards, **⭐ VIP Special Service** highlight, and convenient date/time slot picker.
+- **Digital Confirmation Receipt:** Generates a unique tracking ID (`HSC-YYYYMMDD-XXXXX`) and direct **Telegram Support (@kemlu09)** button.
 
-### পদ্ধতি ১: জিরো-কনফিগ মোড (কোনো সেটআপ ছাড়াই সরাসরি চালু)
-1. সমস্ত ফাইল জিপ (`.zip`) করে আপনার cPanel এর `public_html` অথবা সাব-ডোমেইনের ফোল্ডারে আপলোড করে Extract করুন।
-2. ব্যাস! ওয়েবসাইট এবং অ্যাডমিন প্যানেল সাথে সাথে কাজ করবে। (ডাটা স্বয়ংক্রিয়ভাবে `data/homeservice.sqlite` এ সুরক্ষিতভাবে সংরক্ষিত হবে)।
+---
 
-### পদ্ধতি ২: MySQL ডাটাবেজ ব্যবহার (ঐচ্ছিক)
-1. cPanel থেকে **MySQL Database Wizard** এ গিয়ে একটি ডাটাবেজ এবং ইউজার তৈরি করুন।
-2. **phpMyAdmin** এ গিয়ে আপনার তৈরি করা ডাটাবেজে `database.sql` ফাইলটি Import করুন।
-3. `includes/config.php` ফাইলটি ওপেন করে আপনার ডাটাবেজের তথ্য দিন:
+### 🔐 Secure Admin Dashboard (`admin/`)
+- **Mobile-Responsive Dashboard:** Manage all booking requests from desktop or mobile.
+- **Gender & Status Filters:** Quick tabs for *All Requests*, *Male Providers*, and *Female Providers*, plus status filters (*Pending*, *Confirmed*, *Completed*, *Cancelled*).
+- **Instant Live Search:** Filter requests by Tracking ID, customer name, mobile number, or address.
+- **Security & Location Audit:** Displays customer Client IP, User-Agent, and one-click direct **Google Maps** link for GPS coordinates.
+- **Export to CSV:** 1-Click download of booking reports for Excel / Google Sheets.
+- **Self-Healing Admin Auth:** Secure Bcrypt session authentication with automatic credential synchronization.
+
+---
+
+## 🛠️ Tech Stack
+
+| Component | Technology |
+| :--- | :--- |
+| **Backend** | PHP 7.4 - 8.x (Native PDO, Session, CSRF Protection) |
+| **Database** | Dual Architecture: **MySQL** (cPanel) & **SQLite** (Zero-Config) |
+| **Frontend** | HTML5, CSS3, Vanilla JavaScript (ES6+) |
+| **Fonts** | Google Fonts (*Hind Siliguri* + *Plus Jakarta Sans*) |
+| **Icons** | Custom Stroke & Duotone Vector SVGs |
+| **Deployment** | cPanel / Apache / Nginx / Localhost |
+
+---
+
+## 📁 Directory Structure
+
+```text
+├── index.php                # Main customer booking interface
+├── database.sql             # MySQL schema for phpMyAdmin import
+├── .htaccess                # Apache/cPanel security & gzip caching
+├── README.md                # Documentation
+├── api/
+│   └── book.php             # Booking submission & validation API
+├── admin/
+│   ├── index.php            # Admin dashboard
+│   ├── login.php            # Secure admin login
+│   ├── logout.php           # Session logout
+│   ├── auth.php             # Session & CSRF security handler
+│   └── api.php              # Status update, delete & CSV export API
+├── includes/
+│   ├── config.php           # Global configuration & Telegram settings
+│   └── db.php               # PDO database handler (MySQL + SQLite fallback)
+└── assets/
+    ├── css/
+    │   └── style.css        # Mobile-first soft theme stylesheet
+    ├── images/
+    │   ├── provider_male.jpg    # Young male therapist profile photo
+    │   └── provider_female.jpg  # Young female therapist profile photo
+    └── js/
+        └── app.js           # Multi-step wizard & GPS geolocation logic
+```
+
+---
+
+## 🚀 Installation & Deployment Guide
+
+### Option 1: Zero-Config Deployment (Recommended)
+1. Compress all project files into a `.zip` archive.
+2. Upload and extract into your cPanel `public_html` or subdomain directory.
+3. **Done!** The system automatically initializes the database (`data/homeservice.sqlite`) and is ready to use immediately.
+
+---
+
+### Option 2: MySQL Database Setup on cPanel
+1. In cPanel, navigate to **MySQL Database Wizard** and create a database and user (e.g., `fellesxy_service`).
+2. Open **phpMyAdmin**, select your database, and **Import** `database.sql`.
+3. Open `includes/config.php` and update your database credentials:
    ```php
    define('DB_HOST', 'localhost');
-   define('DB_NAME', 'your_cpanel_dbname');
-   define('DB_USER', 'your_cpanel_dbuser');
-   define('DB_PASS', 'your_cpanel_dbpassword');
+   define('DB_NAME', 'your_database_name');
+   define('DB_USER', 'your_database_user');
+   define('DB_PASS', 'your_database_password');
    ```
 
 ---
 
-## 🔐 অ্যাডমিন প্যানেল লগইন তথ্য
+## 🔐 Default Admin Credentials
 
-- **লগইন ইউআরএল:** `https://yourdomain.com/admin/login.php`
-- **ডিফল্ট ইউজারনেম:** `admin`
-- **ডিফল্ট পাসওয়ার্ড:** `admin123`
+- **Admin Login URL:** `https://yourdomain.com/admin/login.php`
+- **Username:** `hsc_admin_root`
+- **Password:** `Hsc#2026$Adm9!Kq8`
 
-*(লগইন করার পর ড্যাশবোর্ডের "পাসওয়ার্ড পরিবর্তন" বাটন থেকে পাসওয়ার্ড পরিবর্তন করে নেওয়া যাবে)*
+*(You can change the password at any time from the admin dashboard)*
 
 ---
 
-## 📁 ফাইল ও ফোল্ডার স্ট্রাকচার
+## 📞 Support & Contact
 
-```text
-├── index.php                # মূল কাস্টমার-ফেসিং বুকিং ওয়েবসাইট
-├── database.sql             # MySQL ডাটাবেজ স্কিমা ফাইল
-├── .htaccess                # Apache / cPanel সিকিউরিটি ও ক্যাশিং রুলস
-├── api/
-│   └── book.php             # বুকিং প্রসেসিং ও ভ্যালিডেশন API
-├── admin/
-│   ├── index.php            # অ্যাডমিন ড্যাশবোর্ড
-│   ├── login.php            # সিকিউর অ্যাডমিন লগইন
-│   ├── logout.php           # লগআউট স্ক্রিপ্ট
-│   ├── auth.php             # সেশন ও CSRF নিরাপত্তা
-│   └── api.php              # স্ট্যাটাস আপডেট, ডিলিট ও CSV এক্সপোর্ট API
-├── includes/
-│   ├── config.php           # সাইট সেটিংস ও ডাটাবেজ কনফিগারেশন
-│   └── db.php               # PDO ডাটাবেজ কানেকশন হ্যান্ডলার
-└── assets/
-    ├── css/
-    │   └── style.css        # মোবাইল-ফার্স্ট সফট থিম স্টাইলশিট
-    └── js/
-        └── app.js           # মাল্টি-স্টেপ ফর্ম ও GPS জিওলোকেশন লজিক
-```
+- **Telegram Support:** [@kemlu09](https://t.me/kemlu09)
+- **Live Demo:** [http://service.felles.xyz](http://service.felles.xyz)
+
+---
+
+## 📄 License
+This project is open-source and available under the **MIT License**.
